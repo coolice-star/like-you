@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到我的心</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="welcome.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+</head>
+<body>
+    <div class="falling-hearts"></div>
+    
+    <div class="welcome-container">
+        <div class="welcome-content">
+            <h1 class="welcome-title">欢迎来到我的心</h1>
+            
+            <div class="welcome-message">
+                <p>亲爱的公主殿下，</p>
+                <p>是缘分让我们相遇，是真心让我们相知</p>
+                <p>今日，我想向你表达这份最真挚的感情</p>
+                <p>请允许我带你进入我的心灵世界</p>
+            </div>
+            
+            <div class="crown-decoration">
+                <i class="fas fa-crown"></i>
+            </div>
+            
+            <a href="main.html" class="enter-button">
+                <span class="button-text">公主请点击进入</span>
+                <div class="button-effect"></div>
+            </a>
+        </div>
+    </div>
+    
+    <!-- 添加音乐播放器 -->
+    <div class="music-player">
+        <div class="music-icon">
+            <i class="fas fa-music"></i>
+        </div>
+        <div class="music-controls">
+            <button id="play-pause-btn" class="play-pause-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <span class="music-name">稻香 - 周杰伦</span>
+        </div>
+        <audio id="background-music" loop>
+            <source src="稻香-周杰伦-440613-128.mp3" type="audio/mp3">
+            您的浏览器不支持音频元素。
+        </audio>
+    </div>
+    
+    <script src="welcome.js"></script>
+</body>
+</html> 

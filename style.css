@@ -1,0 +1,620 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+    font-family: 'Noto Serif SC', serif;
+    color: #5d4037;
+    line-height: 1.6;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* 返回按钮样式 */
+.back-button {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(233, 30, 99, 0.3);
+    z-index: 10;
+}
+
+.back-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(233, 30, 99, 0.4);
+    background: linear-gradient(135deg, #d81b60 0%, #ad1457 100%);
+}
+
+.back-button i {
+    margin-right: 6px;
+    font-size: 0.9rem;
+}
+
+/* 标题样式 */
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 3rem;
+    color: #d81b60;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 2s ease-in-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ad1457;
+    font-weight: 300;
+    letter-spacing: 1px;
+    animation: fadeIn 2.5s ease-in-out;
+}
+
+/* 照片框样式 */
+.photo-frame {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto 3rem;
+    perspective: 1000px;
+}
+
+.photo {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: white;
+    padding: 10px;
+}
+
+.photo img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    transition: transform 0.5s ease;
+}
+
+.photo:hover img {
+    transform: scale(1.05);
+}
+
+.heart-shape {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: -1;
+    opacity: 0.8;
+    animation: heartBeat 5s infinite;
+    pointer-events: none;
+}
+
+.heart-shape:before,
+.heart-shape:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 25%;
+    border: 2px solid #e91e63;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(-45deg);
+    transform-origin: 0 100%;
+}
+
+.heart-shape:after {
+    left: 0;
+    transform: rotate(45deg);
+    transform-origin: 100% 100%;
+}
+
+/* 诗句区域样式 */
+.poem-section {
+    text-align: center;
+    margin-bottom: 3rem;
+    perspective: 1000px;
+}
+
+.poem {
+    display: inline-block;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transform: rotateX(10deg);
+    transition: transform 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+.poem:hover {
+    transform: rotateX(0);
+}
+
+.poem p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #ad1457;
+    line-height: 1.8;
+}
+
+/* 情书区域样式 */
+.love-letter {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.love-letter::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid #f8bbd0;
+    border-radius: 15px;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.love-letter h2 {
+    text-align: center;
+    color: #c2185b;
+    margin-bottom: 1.5rem;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.8rem;
+}
+
+.love-letter p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    text-indent: 2em;
+}
+
+.signature {
+    text-align: right;
+    font-style: italic;
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 1.3rem;
+    margin-top: 1.5rem;
+    color: #c2185b;
+}
+
+/* 互动按钮样式 */
+.interactive-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.heart-button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(233, 30, 99, 0.3);
+    outline: none;
+}
+
+.heart-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.4);
+    background-color: #d81b60;
+}
+
+.heart-icon {
+    width: 24px;
+    height: 24px;
+    fill: white;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+.heart-button:hover .heart-icon {
+    transform: scale(1.2);
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #757575;
+}
+
+.modal h2 {
+    text-align: center;
+    color: #c2185b;
+    margin-bottom: 1.5rem;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+.love-message {
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    text-indent: 2em;
+}
+
+.heart-animation {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 页脚样式 */
+footer {
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+}
+
+.footer-text {
+    color: #ad1457;
+    font-size: 1.1rem;
+    font-family: 'Ma Shan Zheng', cursive;
+}
+
+/* 飘落的心形 */
+.falling-hearts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.heart {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgba(233, 30, 99, 0.3);
+    transform: rotate(45deg);
+    top: -100px;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -10px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: -10px;
+}
+
+.floating-hearts {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    top: -50px;
+    left: 0;
+    pointer-events: none;
+}
+
+/* 音乐播放器样式 */
+.music-player {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 30px;
+    padding: 8px 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+
+.music-player:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.music-icon {
+    color: #e91e63;
+    margin-right: 10px;
+    animation: pulse 2s infinite;
+}
+
+.music-controls {
+    display: flex;
+    align-items: center;
+}
+
+.play-pause-btn {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.play-pause-btn:hover {
+    background-color: #c2185b;
+    transform: scale(1.1);
+}
+
+.music-name {
+    font-size: 0.9rem;
+    color: #ad1457;
+    white-space: nowrap;
+}
+
+/* 点击提示样式 */
+.click-tip {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 15px;
+    border-radius: 20px;
+    color: #ad1457;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    animation: fadeInOut 3s infinite;
+    z-index: 10;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes heartBeat {
+    0% {
+        transform: scale(1);
+    }
+    14% {
+        transform: scale(1.1);
+    }
+    28% {
+        transform: scale(1);
+    }
+    42% {
+        transform: scale(1.1);
+    }
+    70% {
+        transform: scale(1);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotateX(10deg);
+    }
+    50% {
+        transform: translateY(-15px) rotateX(10deg);
+    }
+    100% {
+        transform: translateY(0) rotateX(10deg);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .title {
+        font-size: 2.2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .photo-frame {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .poem p {
+        font-size: 0.95rem;
+    }
+    
+    .love-letter h2 {
+        font-size: 1.5rem;
+    }
+    
+    .heart-button {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+    
+    .music-player {
+        bottom: 10px;
+        right: 10px;
+        padding: 5px 10px;
+    }
+    
+    .click-tip {
+        bottom: 10px;
+        left: 10px;
+        font-size: 0.8rem;
+    }
+    
+    .back-button {
+        top: 10px;
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-frame {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .poem {
+        padding: 1.5rem;
+    }
+    
+    .love-letter {
+        padding: 1.5rem;
+    }
+    
+    .music-name {
+        display: none;
+    }
+    
+    .back-button {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .back-button i {
+        margin-right: 4px;
+    }
+} 

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的心里只有贝贝你</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+SC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+</head>
+<body>
+    <div class="falling-hearts"></div>
+    
+    <!-- 返回按钮 -->
+    <a href="index.html" class="back-button">
+        <i class="fas fa-arrow-left"></i>
+        <span>返回</span>
+    </a>
+    
+    <div class="container">
+        <header>
+            <h1 class="title">我的心里只有贝贝你</h1>
+            <div class="subtitle">愿时光能缓，愿故人不散，愿你眼中有星辰，心中有暖阳</div>
+        </header>
+        
+        <main>
+            <div class="photo-frame">
+                <div class="heart-shape"></div>
+                <div class="photo">
+                    <img src="微信图片_20250411221401.jpg" alt="贝贝">
+                </div>
+            </div>
+            
+            <div class="poem-section">
+                <div class="poem">
+                    <p>这世间，你最珍贵</p>
+                    <p>你的一颦一笑，都是我心中的曙光</p>
+                    <p>纵使万劫不复，纵使相思入骨</p>
+                    <p>我也愿意，朝你而行，不顾一切</p>
+                </div>
+            </div>
+            
+            <div class="love-letter">
+                <h2>给亲爱的贝贝</h2>
+                <p>时光荏苒，岁月如梭，在茫茫人海中与你相遇，是我今生最美的际遇。</p>
+                <p>你的笑容如春风拂面，温暖了我的心房；你的声音如清泉流淌，滋润了我的灵魂。</p>
+                <p>无论世界如何变幻，我的心中始终只有你一人。愿与你携手同行，共度余生。</p>
+                <p class="signature">爱你的人</p>
+            </div>
+            
+            <div class="interactive-section">
+                <button id="heart-button" class="heart-button">
+                    <svg class="heart-icon" viewBox="0 0 32 32">
+                        <path d="M16,28.261c0,0-14-7.926-14-17.046c0-9.356,13.159-10.399,14-0.454c1.011-9.938,14-8.903,14,0.454
+                        C30,20.335,16,28.261,16,28.261z"/>
+                    </svg>
+                    <span>点击表白</span>
+                </button>
+            </div>
+        </main>
+        
+        <div id="love-modal" class="modal">
+            <div class="modal-content">
+                <div class="close">&times;</div>
+                <h2>我想对你说</h2>
+                <p class="love-message">自从遇见你，我的世界便有了光彩。你的笑容如春风拂面，你的气质如兰花幽香。每一天，我都感谢命运让我遇见你。无论风雨，无论岁月，我都愿陪你一起走过。我的心里只有贝贝你，从今以后，直到永远。</p>
+                <div class="heart-animation"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p class="footer-text">愿有岁月可回首，且以深情共白头</p>
+        <div class="floating-hearts"></div>
+    </footer>
+    
+    <!-- 添加音乐播放器 -->
+    <div class="music-player">
+        <div class="music-icon">
+            <i class="fas fa-music"></i>
+        </div>
+        <div class="music-controls">
+            <button id="play-pause-btn" class="play-pause-btn">
+                <i class="fas fa-play"></i>
+            </button>
+            <span class="music-name">稻香 - 周杰伦</span>
+        </div>
+        <audio id="background-music" loop>
+            <source src="稻香-周杰伦-440613-128.mp3" type="audio/mp3">
+            您的浏览器不支持音频元素。
+        </audio>
+    </div>
+    
+    <div class="click-tip">点击任意处，传达爱意</div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 

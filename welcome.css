@@ -1,0 +1,177 @@
+/* 欢迎页面专用样式 */
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+    z-index: 2;
+}
+
+.welcome-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+    animation: fadeIn 1.5s ease-in-out;
+    border: 2px solid #f8bbd0;
+}
+
+.welcome-title {
+    font-family: 'Ma Shan Zheng', cursive;
+    font-size: 2.8rem;
+    color: #d81b60;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.05);
+    position: relative;
+    display: inline-block;
+}
+
+.welcome-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 10%;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #e91e63, transparent);
+}
+
+.welcome-message {
+    margin-bottom: 3rem;
+    line-height: 1.8;
+}
+
+.welcome-message p {
+    margin-bottom: 0.8rem;
+    color: #5d4037;
+    font-size: 1.1rem;
+}
+
+.crown-decoration {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #ffeb3b;
+    font-size: 2rem;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.2));
+    animation: float 3s ease-in-out infinite;
+}
+
+.enter-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #e91e63 0%, #c2185b 100%);
+    color: white;
+    font-size: 1.3rem;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Ma Shan Zheng', cursive;
+    box-shadow: 0 5px 20px rgba(233, 30, 99, 0.3);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    z-index: 1;
+}
+
+.enter-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+}
+
+.button-text {
+    position: relative;
+    z-index: 2;
+}
+
+.button-effect {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.enter-button:hover .button-effect {
+    left: 100%;
+}
+
+/* 心形装饰 */
+.welcome-content::before,
+.welcome-content::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(233, 30, 99, 0.2);
+    transform: rotate(45deg);
+    z-index: -1;
+}
+
+.welcome-content::before {
+    top: -10px;
+    left: -10px;
+}
+
+.welcome-content::after {
+    bottom: -10px;
+    right: -10px;
+}
+
+.welcome-content::before,
+.welcome-content::after {
+    animation: heartBeat 5s infinite;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .welcome-container {
+        padding: 1rem;
+    }
+    
+    .welcome-content {
+        padding: 2rem;
+    }
+    
+    .welcome-title {
+        font-size: 2.2rem;
+    }
+    
+    .welcome-message p {
+        font-size: 1rem;
+    }
+    
+    .enter-button {
+        font-size: 1.1rem;
+        padding: 12px 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .welcome-content {
+        padding: 1.5rem;
+    }
+    
+    .welcome-title {
+        font-size: 1.8rem;
+    }
+    
+    .welcome-message p {
+        font-size: 0.9rem;
+    }
+    
+    .enter-button {
+        font-size: 1rem;
+        padding: 10px 25px;
+    }
+} 

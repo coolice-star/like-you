@@ -1,0 +1,13 @@
+{
+  "name": "love-confession-page",
+  "version": "1.0.0",
+  "description": "表白网页",
+  "scripts": {
+    "dev": "live-server",
+    "build": "echo 'Production build'"
+  },
+  "devDependencies": {
+    "@stagewise/toolbar": "^0.1.0",
+    "live-server": "^1.2.2"
+  }
+} 
